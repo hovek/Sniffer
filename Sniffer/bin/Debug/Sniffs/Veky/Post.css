@@ -1,0 +1,37 @@
+﻿body {
+    background-color: black;
+}
+
+.blogtitle {
+    font-size: 190%;
+    line-height: 90%;
+    font-weight: bold;
+    color: #F8F902;
+    padding-bottom: 5px;
+}
+
+.blogtext {
+    font-size: 120%;
+    color: #CBCCC6;
+    padding-bottom: 5px;
+}
+
+    .blogtext a {
+        color: #F8F902;
+        text-decoration: none;
+    }
+
+        .blogtext a:hover {
+            color: #F8F902;
+            text-decoration: underline;
+        }
+
+        .blogtext a:visited {
+            color: #F8F902;
+            text-decoration: none;
+        }
+
+.blogdate {
+    font-size: 90%;
+    color: #CBCCC6;
+}

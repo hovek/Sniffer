@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{061DC551-EE0A-4A2A-A5DF-81243757D118}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Sniffer</RootNamespace>
+    <AssemblyName>Sniffer</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\free-dog-icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.3.1.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="geckofx-13, Version=10.0.0.0, Culture=neutral, PublicKeyToken=3209ac31600d1857, processorArchitecture=x86">
+      <HintPath>..\References\geckofx-13.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Polenter.SharpSerializer">
+      <HintPath>..\References\Polenter.SharpSerializer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\EnumStringValue.cs" />
+    <Compile Include="Common\ReflectionCopy.cs" />
+    <Compile Include="Common\ReflectionHelper.cs" />
+    <Compile Include="Common\TSList.cs" />
+    <Compile Include="Settings\Controls\MailSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Settings\Controls\MailSettings.Designer.cs">
+      <DependentUpon>MailSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Controls\SmtpSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Settings\Controls\SmtpSettings.Designer.cs">
+      <DependentUpon>SmtpSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Forms\UsersSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Forms\UsersSettingsForm.Designer.cs">
+      <DependentUpon>UsersSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Forms\MailSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Forms\MailSettingsForm.Designer.cs">
+      <DependentUpon>MailSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Forms\SmtpSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Forms\SmtpSettingsForm.Designer.cs">
+      <DependentUpon>SmtpSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Forms\SniffSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Forms\SniffSettingsForm.Designer.cs">
+      <DependentUpon>SniffSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sniffs\Deki\Deki.cs" />
+    <Compile Include="Sniffs\Deki\DekiUserSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sniffs\Deki\DekiUserSettingsForm.Designer.cs">
+      <DependentUpon>DekiUserSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sniffs\Deki\DekiUserSettings.cs" />
+    <Compile Include="Sniffs\Deki\DekiUserState.cs" />
+    <Compile Include="Sniffs\Dvoznak\DvoznakUserSettings.cs" />
+    <Compile Include="Sniffs\Dvoznak\DvoznakUserSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sniffs\Dvoznak\DvoznakUserSettingsForm.Designer.cs">
+      <DependentUpon>DvoznakUserSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sniffs\Dvoznak\TipElderDb.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Sniffs\Dvoznak\UserState.cs" />
+    <Compile Include="Sniffs\HoveWebBrowser.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sniffs\Njuskalo\NjuskaloUserSettings.cs" />
+    <Compile Include="Sniffs\Njuskalo\NjuskaloUserSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sniffs\Njuskalo\NjuskaloUserSettingsForm.Designer.cs">
+      <DependentUpon>NjuskaloUserSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sniffs\Njuskalo\UserState.cs" />
+    <Compile Include="Sniffs\SniffsEnum.cs" />
+    <Compile Include="Settings\MailSettings.cs" />
+    <Compile Include="Settings\SniffSettings.cs" />
+    <Compile Include="Settings\ProgramSettings.cs" />
+    <Compile Include="Settings\Settings.cs" />
+    <Compile Include="Settings\SmtpSettings.cs" />
+    <Compile Include="Settings\UserSettings.cs" />
+    <Compile Include="Sniffs\Sniff.cs" />
+    <Compile Include="Sniffs\Club180\Club180.cs" />
+    <Compile Include="Sniffs\Dvoznak\Dvoznak.cs" />
+    <Compile Include="Sniffs\Dvoznak\Tip.cs" />
+    <Compile Include="Common\Common.cs" />
+    <Compile Include="Sniffs\MilanBlog\MilanBlog.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Mouse.cs" />
+    <Compile Include="Sniffs\Njuskalo\Njuskalo.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sniffs\SniffMappings.cs" />
+    <Compile Include="Sniffs\Veky\Veky.cs" />
+    <Compile Include="Sniffs\Veky\VekyUserSettings.cs" />
+    <Compile Include="Sniffs\Veky\VekyUserSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sniffs\Veky\VekyUserSettingsForm.Designer.cs">
+      <DependentUpon>VekyUserSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sniffs\Veky\VekyUserState.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\Controls\MailSettings.resx">
+      <DependentUpon>MailSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\Controls\SmtpSettings.resx">
+      <DependentUpon>SmtpSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Settings\Forms\UsersSettingsForm.resx">
+      <DependentUpon>UsersSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\Forms\MailSettingsForm.resx">
+      <DependentUpon>MailSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\Forms\SmtpSettingsForm.resx">
+      <DependentUpon>SmtpSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\Forms\SniffSettingsForm.resx">
+      <DependentUpon>SniffSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sniffs\Deki\DekiUserSettingsForm.resx">
+      <DependentUpon>DekiUserSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sniffs\Dvoznak\DvoznakUserSettingsForm.resx">
+      <DependentUpon>DvoznakUserSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sniffs\Njuskalo\NjuskaloUserSettingsForm.resx">
+      <DependentUpon>NjuskaloUserSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sniffs\Veky\VekyUserSettingsForm.resx">
+      <DependentUpon>VekyUserSettingsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Sniffs\SmicerBlog\SmicerBlog.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Sniffs\Veky\Post.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Sniffs\Dvoznak\SQLObjects\jobDropBadOrGoodFilterUnusedProcedures.sql" />
+    <Content Include="Sniffs\Deki\Post.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sniffs\Dvoznak\Tip.css">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\free-dog-icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

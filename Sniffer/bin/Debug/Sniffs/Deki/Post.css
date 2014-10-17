@@ -1,0 +1,42 @@
+﻿body {
+    background-color: black;
+}
+
+.blogdate {
+    font-family: verdana;
+    color: #ffffff;
+    font-size: 10px;
+}
+
+.blogtext a {
+    color: #699DFF;
+    text-decoration: none;
+}
+
+    .blogtext a:hover {
+        color: #699DFF;
+        text-decoration: underline;
+    }
+
+    .blogtext a:visited {
+        color: #699DFF;
+        text-decoration: none;
+    }
+
+.blogtitle {
+    font-family: verdana;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+    .blogtitle a {
+        font-family: verdana;
+        color: #008040;
+    }
+
+.blogtext {
+    font-family: verdana;
+    color: #ffffff;
+}
